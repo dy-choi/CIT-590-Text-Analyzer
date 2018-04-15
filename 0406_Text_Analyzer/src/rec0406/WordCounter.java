@@ -19,7 +19,7 @@ public class WordCounter {
 
 		// generate the word count from the lines read
 		generateWordCounts();
-		// removeTrivialWords(); // this is a challenge exercise
+		removeTrivialWords(); // this is a challenge exercise
 
 	}
 
@@ -39,6 +39,8 @@ public class WordCounter {
 				
 				// check if the word is empty
 				if (!word.isEmpty()) {
+					
+					word = removePunctuationsFromWord(word); // this is a challenge exercise
 					
 					// check if the map already has this word
 					if (wordCount.containsKey(word)) {
