@@ -2,7 +2,9 @@ package rec0406;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class WordCounter {
 
@@ -97,9 +99,30 @@ public class WordCounter {
 	 */
 	public Map<String, Integer> getWordsOccuringMoreThan(int threshold) {
 
-		// TODO
+		// create a new map with all the values of the original, full word count map
+		Map<String, Integer> commonWordCount = new HashMap<String, Integer>(wordCount);
 
-		return null;
+		// get an iterator for the collection of entries in the map
+		Iterator<Entry<String, Integer>> iter = commonWordCount.entrySet().iterator();
+
+		// keeping going while there are still entries to analyze
+		while (iter.hasNext()) {
+
+			// get the Entry object from the iterator
+			Map.Entry<String, Integer> currentEntry = iter.next();
+
+			// get the count for this entry
+			Integer count = (Integer) currentEntry.getValue();
+
+			// if the count is below the threshold, remove it from the map
+			if (count < threshold) {
+				iter.remove();
+			}
+
+		}
+
+		// return the updated map
+		return commonWordCount;
 	}
 
 	/*
