@@ -125,7 +125,13 @@ public class WordCounter {
 	 */
 	private String removePunctuationsFromWord(String word) {
 		String ans = "";
-		// TODO: this is a challenge exercise.
+		
+		for (Character ch : word.toCharArray()) {
+			if (Character.isLetterOrDigit(ch)) {
+				ans += ch;
+			}
+		}
+		
 		return ans;
 	}
 
