@@ -26,7 +26,7 @@ public class TxtFileReader {
 
 	public ArrayList<String> getAllLines() {
 
-		// initialize an arraylist to hold the lines of text
+		// initialize an ArrayList to hold the lines of text
 		ArrayList<String> lines = new ArrayList<String>();
 
 		try {
@@ -46,7 +46,7 @@ public class TxtFileReader {
 
 				// make sure line wasn't just white space
 				if (!line.isEmpty()) {
-					// add the current line to the arraylist
+					// add the current line to the ArrayList
 					lines.add(line);
 				}
 
@@ -70,7 +70,7 @@ public class TxtFileReader {
 
 		}
 
-		// return the arraylist of lines of text
+		// return the ArrayList of lines of text
 		return lines;
 	}
 
