@@ -2,6 +2,7 @@ package rec0406;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class WordCounter {
@@ -102,7 +103,16 @@ public class WordCounter {
 	 * words from this.wordCount's key set.
 	 */
 	public void removeTrivialWords() {
-		// TODO
+		
+		Iterator<String> iter = wordCount.keySet().iterator();
+		
+		while (iter.hasNext()) {
+			String currentWord = iter.next();
+			if (currentWord.length() < 3) {
+				iter.remove();
+			}
+		}
+		
 	}
 
 	/**
