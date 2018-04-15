@@ -36,6 +36,8 @@ public class WordCounter {
 			// iterate through the words
 			for (String word : words) {
 				
+				// word = removePunctuationsFromWord(word); // this is a challenge exercise
+				
 				// check if the word is empty
 				if (!word.isEmpty()) {
 					
