@@ -29,29 +29,29 @@ public class WordCounter {
 
 		// iterate through all the lines
 		for (String line : lines) {
-			
+
 			// split the line at empty spaces
 			String[] words = line.split(" ");
-			
+
 			// iterate through the words
 			for (String word : words) {
-				
+
 				// word = removePunctuationsFromWord(word); // this is a challenge exercise
-				
+
 				// check if the word is empty
 				if (!word.isEmpty()) {
-					
+
 					// check if the map already has this word
 					if (wordCount.containsKey(word)) {
-						
+
 						// get the current count
 						int currentCount = wordCount.get(word);
-						
+
 						// change the count to be 1 more
 						wordCount.put(word, currentCount + 1);
-						
+
 					} else {
-						
+
 						// add new word with count of 1
 						wordCount.put(word, 1);
 					}
@@ -74,9 +74,20 @@ public class WordCounter {
 	 */
 	public void printWordsOccuringMoreThan(int threshold) {
 
+		// get map of words that occur more than threshold
 		Map<String, Integer> commonWordCount = getWordsOccuringMoreThan(threshold);
 
-		// TODO
+		// iterate through key set of map
+		for (String word : commonWordCount.keySet()) {
+
+			// format the output for each word: "count: word"
+			// "\t" is a tab character
+			String output = commonWordCount.get(word) + ":\t" + word;
+
+			// print the formatted output
+			System.out.println(output);
+
+		}
 	}
 
 	/**
