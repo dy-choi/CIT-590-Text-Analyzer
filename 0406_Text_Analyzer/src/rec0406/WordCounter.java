@@ -20,8 +20,7 @@ public class WordCounter {
 
 		// generate the word count from the lines read
 		generateWordCounts();
-		removeTrivialWords();
-		removeTrivialWords(); // this is a challenge exercise
+		// removeTrivialWords(); // this is a challenge exercise
 
 	}
 
@@ -39,9 +38,7 @@ public class WordCounter {
 			// iterate through the words
 			for (String word : words) {
 
-				word = removePunctuationsFromWord(word); // this is a challenge
-															// exercise
-
+				// word = removePunctuationsFromWord(word); // this is a challenge exercise
 
 				// check if the word is empty
 				if (!word.isEmpty()) {
@@ -63,9 +60,13 @@ public class WordCounter {
 				}
 			}
 		}
+
 	}
 
-	public Map<String, Integer> getWordCount() {
+	/**
+	 * @return map of words to count totals
+	 */
+	protected Map<String, Integer> getWordCount() {
 		return wordCount;
 	}
 
@@ -99,7 +100,6 @@ public class WordCounter {
 	public Map<String, Integer> getWordsOccuringMoreThan(int threshold) {
 
 		// create a new map with all the values of the original, full word count map
-
 		Map<String, Integer> commonWordCount = new HashMap<String, Integer>(wordCount);
 
 		// get an iterator for the collection of entries in the map
@@ -120,9 +120,9 @@ public class WordCounter {
 			}
 
 		}
+
 		// return the updated map
 		return commonWordCount;
-
 	}
 
 	/*
@@ -133,36 +133,26 @@ public class WordCounter {
 	 */
 
 	/**
-	 * Define trivial words to be words that are of length three or less, such
-	 * as "I", "a", "we", "the", "and", etc. Remove all such words from
-	 * this.wordCount's key set.
+	 * Define trivial words to be words that are either single- or
+	 * double-characters long, such as "I", "a", "we", etc. Remove all such
+	 * words from this.wordCount's key set.
 	 */
-
-	private void removeTrivialWords() {
-		Iterator<String> iter = this.wordCount.keySet().iterator();
-		// iterate through each element in the key set
-		while (iter.hasNext()) {
-			// remove if iter points to String with length less than three
-			if (iter.next().length() < 4) {
-				iter.remove();
-			}
-		}
+	public void removeTrivialWords() {
+		// TODO
 	}
 
 	/**
 	 * Remove all punctuations from a word. Punctuations here are defined as
-	 * anything that is not a letter or a digit.
+	 * anything that is not a letter or a digit. Do not use regex. If you do not
+	 * know what it is, don't worry about it.
 	 * 
 	 * @param word
 	 * @return
 	 */
 	private String removePunctuationsFromWord(String word) {
 		String ans = "";
-		for (Character ch : word.toCharArray()) {
-			if (Character.isLetterOrDigit(ch)) {
-				ans += ch;
-			}
-		}
+		// TODO: this is a challenge exercise.
 		return ans;
 	}
+
 }
