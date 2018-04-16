@@ -42,6 +42,7 @@ public class WordCounter {
 				word = removePunctuationsFromWord(word); // this is a challenge
 															// exercise
 
+
 				// check if the word is empty
 				if (!word.isEmpty()) {
 
@@ -88,7 +89,6 @@ public class WordCounter {
 			System.out.println(output);
 
 		}
-
 	}
 
 	/**
@@ -98,8 +98,8 @@ public class WordCounter {
 	 */
 	public Map<String, Integer> getWordsOccuringMoreThan(int threshold) {
 
-		// create a new map with all the values of the original, full word count
-		// map
+		// create a new map with all the values of the original, full word count map
+
 		Map<String, Integer> commonWordCount = new HashMap<String, Integer>(wordCount);
 
 		// get an iterator for the collection of entries in the map
