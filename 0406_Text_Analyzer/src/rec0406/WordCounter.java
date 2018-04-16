@@ -139,14 +139,7 @@ public class WordCounter {
 	 */
 
 	private void removeTrivialWords() {
-		Iterator<String> iter = this.wordCount.keySet().iterator();
-		// iterate through each element in the key set
-		while (iter.hasNext()) {
-			// remove if iter points to String with length less than three
-			if (iter.next().length() < 4) {
-				iter.remove();
-			}
-		}
+		// TODO challenge exercise
 	}
 
 	/**
@@ -157,12 +150,6 @@ public class WordCounter {
 	 * @return
 	 */
 	private String removePunctuationsFromWord(String word) {
-		String ans = "";
-		for (Character ch : word.toCharArray()) {
-			if (Character.isLetterOrDigit(ch)) {
-				ans += ch;
-			}
-		}
-		return ans;
+		// TODO challenge exercise
 	}
 }
