@@ -21,6 +21,8 @@ public class WordCounter {
 		// generate the word count from the lines read
 		generateWordCounts();
 		removeTrivialWords();
+		removeTrivialWords(); // this is a challenge exercise
+
 	}
 
 	/**
@@ -37,10 +39,11 @@ public class WordCounter {
 			// iterate through the words
 			for (String word : words) {
 
+				word = removePunctuationsFromWord(word); // this is a challenge
+															// exercise
+
 				// check if the word is empty
 				if (!word.isEmpty()) {
-					// CHALLENGE EXERCISE: removePunctuationsFromWord
-					word = removePunctuationsFromWord(word);
 
 					// check if the map already has this word
 					if (wordCount.containsKey(word)) {
@@ -59,7 +62,6 @@ public class WordCounter {
 				}
 			}
 		}
-
 	}
 
 	public Map<String, Integer> getWordCount() {
@@ -135,6 +137,7 @@ public class WordCounter {
 	 * as "I", "a", "we", "the", "and", etc. Remove all such words from
 	 * this.wordCount's key set.
 	 */
+
 	private void removeTrivialWords() {
 		Iterator<String> iter = this.wordCount.keySet().iterator();
 		// iterate through each element in the key set
@@ -155,12 +158,11 @@ public class WordCounter {
 	 */
 	private String removePunctuationsFromWord(String word) {
 		String ans = "";
-		// loop through all characters in a char[] of the word
-		for (Character c : word.toCharArray()) {
-			if (Character.isLetterOrDigit(c))
-				ans += c;
+		for (Character ch : word.toCharArray()) {
+			if (Character.isLetterOrDigit(ch)) {
+				ans += ch;
+			}
 		}
 		return ans;
 	}
-
 }
